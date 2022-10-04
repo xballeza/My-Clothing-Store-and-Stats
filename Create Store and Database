@@ -1,0 +1,28 @@
+--Create a store database
+CREATE TABLE my_store (id INTEGER PRIMARY KEY, name TEXT, section TEXT, price INTEGER, rating INTEGER);
+ 
+INSERT INTO my_store VALUES (1, "CARDIGAN", "knitwear", 31.99, 4.5);
+INSERT INTO my_store VALUES (2, "SWIM SHORTS", "swimwear", 69.99, 4.8);
+INSERT INTO my_store VALUES (3, "POLO SHIRT", "business casual", 29.99, 3.9);
+INSERT INTO my_store VALUES (4, "SUNGLASSES", "accessories", 26.99, 4.4);
+INSERT INTO my_store VALUES (5, "OVERALLS", "denim", 33.99, 2.9);
+INSERT INTO my_store VALUES (6, "SKIRT", "business casual", 47.99, 5.0);
+INSERT INTO my_store VALUES (7, "JEANS", "denim", 32.99, 4.8);
+INSERT INTO my_store VALUES (8, "BOXERS", "undergarment", 17.99, 4.2);
+INSERT INTO my_store VALUES (9, "LINGERIE", "undergarment", 52.99, 3.7);
+INSERT INTO my_store VALUES (10, "HAT",  "accessories", 19.99, 4.7);
+INSERT INTO my_store VALUES (11, "SOCKS", "accesories", 15.99, 4.7);
+INSERT INTO my_store VALUES (12, "JOGGING SUIT", "sportswear", 38.99, 3.9); 
+INSERT INTO my_store VALUES (13, "SCARF", "accessories", 12.99, 4.6);
+INSERT INTO my_store VALUES (14, "GLOVES", "accessories", 10.99, 4.3);
+INSERT INTO my_store VALUES (15, "SWEATSHIRT", "knitwear", 37.99, 4.5);
+
+--display the database ordered by price
+SELECT * FROM my_store
+ORDER BY price desc;
+
+--what is the average price of the items in the accessories section
+SELECT AVG(price) FROM my_store WHERE section="accessories";
+
+--list all items in store from least popular
+SELECT* FROM my_store ORDER BY rating asc;
